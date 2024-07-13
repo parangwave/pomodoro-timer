@@ -3,20 +3,26 @@ import { start } from "repl";
 
 const A_MINUTE = 60 * 1000 * 1;
 const MAX_MINUTES = 25;
+import { useRecoilState, useRecoilValue } from "recoil";
+import {
+  timerState,
+  isPlayingState,
+  roundsState,
+  goalsState,
+} from "../utils/atoms";
 
 export default function App() {
-  const timeRef = useRef<number>(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [startTime, setStartTime] = useState<number>(Date.now());
-  const [elapsedTime, setElapsedTime] = useState<number>(0);
-  const [rounds, setRounds] = useState<number>(0);
-  const [goals, setGoals] = useState<number>(0);
   const handlePlayBtn = () => {
     if (!isPlaying) {
       setIsPlaying(true);
       setStartTime(Date.now() - elapsedTime);
     } else {
       setIsPlaying(false);
+  const [time, setTime] = useRecoilState(timerState);
+  const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+  const [rounds, setRounds] = useRecoilState(roundsState);
+  const [goals, setGoals] = useRecoilState(goalsState);
+
     }
   };
 
