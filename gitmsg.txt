@@ -1,4 +1,5 @@
-# 제목은 최대 50글자까지 아래에 작성: ex) Feat: Add Key mapping  
+# feat | fix | refactor | design
+# chore | style | docs | rename | remove
 
 # 본문은 아래에 작성  
 
