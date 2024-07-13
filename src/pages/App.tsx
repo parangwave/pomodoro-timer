@@ -15,6 +15,22 @@ export default function App() {
   return (
     <>
       <h1>Pomodoro</h1>
+      <div>
+        <span>00</span>
+        <span>:</span>
+        <span>00</span>
+      </div>
+      <button onClick={handlePlayBtn}>{isPlaying ? "PAUSE" : "PLAY"}</button>
+      <section>
+        <article>
+          <span>{rounds}/4</span>
+          <h5>ROUND</h5>
+        </article>
+        <article>
+          <span>{goals}/12</span>
+          <h5>GOAL</h5>
+        </article>
+      </section>
     </>
   );
 }
