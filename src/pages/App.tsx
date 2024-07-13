@@ -11,6 +11,14 @@ export default function App() {
   const [elapsedTime, setElapsedTime] = useState<number>(0);
   const [rounds, setRounds] = useState<number>(0);
   const [goals, setGoals] = useState<number>(0);
+  const handlePlayBtn = () => {
+    if (!isPlaying) {
+      setIsPlaying(true);
+      setStartTime(Date.now() - elapsedTime);
+    } else {
+      setIsPlaying(false);
+    }
+  };
 
   return (
     <>
