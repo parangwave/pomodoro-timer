@@ -6,7 +6,13 @@ export const TimerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Arial, sans-serif";
+
+  h1 {
+    font-weight: 700;
+    font-size: 5rem;
+    margin: 3rem 0;
+  }
+`;
 
 export const TimerDisplayContainer = styled.div`
   margin: 7rem 0 2rem 0;
