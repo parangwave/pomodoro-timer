@@ -7,6 +7,13 @@ import {
   goalsState,
   MAX_MINUTES,
 } from "../utils/atoms";
+import {
+  StatusContainer,
+  StatusBox,
+  StatusHeader,
+  StatusContent,
+} from "../utils/styledComps";
+
 
 export default function Timer() {
   const [time, setTime] = useRecoilState(timerState);
@@ -45,6 +52,20 @@ export default function Timer() {
   return (
     <div>
       <h1>{formatTime(time)}</h1>
+      <StatusContainer>
+        <StatusBox>
+          <StatusContent>
+            {rounds}/{4}
+          </StatusContent>
+          <StatusHeader>ROUND</StatusHeader>
+        </StatusBox>
+        <StatusBox>
+          <StatusContent>
+            {goals}/{12}
+          </StatusContent>
+          <StatusHeader>GOAL</StatusHeader>
+        </StatusBox>
+      </StatusContainer>
     </div>
   );
 }
