@@ -13,6 +13,7 @@ import {
   StatusHeader,
   StatusContent,
 } from "../utils/styledComps";
+import PlayBtn from "./PlayBtn";
 
 const MAX_ROUNDS = 4;
 const MAX_GOALS = 12;
@@ -55,6 +56,7 @@ export default function Timer() {
     <div>
       <h1>Pomodoro</h1>
       <h1>{formatTime(time)}</h1>
+      <PlayBtn />
       <StatusContainer>
         <StatusBox>
           <StatusContent>
