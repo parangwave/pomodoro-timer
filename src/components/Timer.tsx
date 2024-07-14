@@ -74,7 +74,7 @@ export default function Timer() {
   };
 
   return (
-    <div>
+    <TimerContainer>
       <h1>Pomodoro</h1>
       <TimerDisplayContainer>
         <TimerDisplay
@@ -114,6 +114,6 @@ export default function Timer() {
           <StatusHeader>GOAL</StatusHeader>
         </StatusBox>
       </StatusContainer>
-    </div>
+    </TimerContainer>
   );
 }
