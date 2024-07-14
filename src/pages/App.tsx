@@ -44,7 +44,9 @@ export default function App() {
         <span>:</span>
         <span>00</span>
       </div>
-      <button onClick={handlePlayBtn}>{isPlaying ? "PAUSE" : "PLAY"}</button>
+      <button onClick={() => setIsPlaying(!isPlaying)}>
+        {isPlaying ? "PAUSE" : "PLAY"}
+      </button>
       <section>
         <article>
           <span>{rounds}/4</span>
