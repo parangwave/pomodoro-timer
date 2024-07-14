@@ -34,15 +34,19 @@ export default function App() {
     }
   }, [isPlaying, time, rounds, goals, setTime, setRounds, setGoals]);
 
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${minutes.toString().padStart(2, "0")}:${seconds
+      .toString()
+      .padStart(2, "0")}`;
   };
 
   return (
     <>
       <h1>Pomodoro</h1>
       <div>
-        <span>00</span>
-        <span>:</span>
-        <span>00</span>
+        <h1>{formatTime(time)}</h1>
       </div>
       <button onClick={() => setIsPlaying(!isPlaying)}>
         {isPlaying ? "PAUSE" : "PLAY"}
