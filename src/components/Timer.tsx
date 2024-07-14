@@ -14,6 +14,8 @@ import {
   StatusContent,
 } from "../utils/styledComps";
 
+const MAX_ROUNDS = 4;
+const MAX_GOALS = 12;
 
 export default function Timer() {
   const [time, setTime] = useRecoilState(timerState);
@@ -31,7 +33,7 @@ export default function Timer() {
     }
     // 시간 === 0 (재생 멈춤 x)
     else if (time === 0) {
-      if (rounds < 3) {
+      if (rounds < MAX_ROUNDS - 1) {
         setRounds(rounds + 1);
       } else {
         setGoals(goals + 1);
@@ -51,17 +53,18 @@ export default function Timer() {
 
   return (
     <div>
+      <h1>Pomodoro</h1>
       <h1>{formatTime(time)}</h1>
       <StatusContainer>
         <StatusBox>
           <StatusContent>
-            {rounds}/{4}
+            {rounds}/{MAX_ROUNDS}
           </StatusContent>
           <StatusHeader>ROUND</StatusHeader>
         </StatusBox>
         <StatusBox>
           <StatusContent>
-            {goals}/{12}
+            {goals}/{MAX_GOALS}
           </StatusContent>
           <StatusHeader>GOAL</StatusHeader>
         </StatusBox>
