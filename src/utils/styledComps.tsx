@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const TimerContainer = styled.div`
@@ -6,6 +7,28 @@ export const TimerContainer = styled.div`
   align-items: center;
   justify-content: center;
   font-family: "Arial, sans-serif";
+
+export const TimerDisplayContainer = styled.div`
+  margin: 7rem 0 2rem 0;
+  font-size: 7rem;
+  display: flex;
+  align-items: center;
+
+  & > span:nth-child(even) {
+    margin: 0 2rem;
+  }
+`;
+
+export const TimerDisplay = styled(motion.span)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 2em;
+  background-color: #ffffff;
+  color: #ff4757;
+  border-radius: 1.5rem;
+`;
 
 export const Button = styled.button`
   cursor: pointer;

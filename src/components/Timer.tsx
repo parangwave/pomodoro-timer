@@ -8,10 +8,13 @@ import {
   MAX_MINUTES,
 } from "../utils/atoms";
 import {
+  TimerContainer,
+  TimerDisplayContainer,
   StatusContainer,
   StatusBox,
   StatusHeader,
   StatusContent,
+  TimerDisplay,
 } from "../utils/styledComps";
 import PlayBtn from "./PlayBtn";
 
@@ -55,12 +58,47 @@ export default function Timer() {
     return `${seconds.toString().padStart(2, "0")}`;
   };
 
+  const timerVariants = {
+    initial: {
+      opacity: 0,
+      scale: 0,
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+    },
+    exit: {
+      opacity: 0,
+      scale: 0,
+    },
   };
 
   return (
     <div>
       <h1>Pomodoro</h1>
-      <h1>{formatTime(time)}</h1>
+      <TimerDisplayContainer>
+        <TimerDisplay
+          key={formatMinutes(time)}
+          variants={timerVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{ duration: 0.5 }}
+        >
+          {formatMinutes(time)}
+        </TimerDisplay>
+        <span>:</span>
+        <TimerDisplay
+          key={formatSeconds(time)}
+          variants={timerVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{ duration: 0.5 }}
+        >
+          {formatSeconds(time)}
+        </TimerDisplay>
+      </TimerDisplayContainer>
       <PlayBtn />
       <StatusContainer>
         <StatusBox>
