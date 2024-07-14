@@ -42,7 +42,7 @@ export default function PlayBtn() {
   return (
     <motion.div
       variants={btnVariants}
-      whileTap={{ scale: 0.9 }}
+      whileTap="tap"
       onClick={() => setIsPlaying(!isPlaying)}
     >
       <Button>{isPlaying ? <PauseIcon /> : <PlayIcon />}</Button>
