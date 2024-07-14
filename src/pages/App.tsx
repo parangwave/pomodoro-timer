@@ -1,8 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { start } from "repl";
-
-const A_MINUTE = 60 * 1000 * 1;
-const MAX_MINUTES = 25;
+import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import {
   timerState,
@@ -23,7 +19,26 @@ export default function App() {
   const [rounds, setRounds] = useRecoilState(roundsState);
   const [goals, setGoals] = useRecoilState(goalsState);
 
+  useEffect(() => {
+    // 재생중 && 시간 > 0
+    if (isPlaying && time > 0) {
+      const interval = setInterval(() => {
+        setTime(time - 1);
+      }, 1000);
+      return () => clearInterval(interval);
     }
+    // 시간 === 0 (재생 멈춤 x)
+    else if (time === 0) {
+      if (rounds < 3) {
+        setRounds(rounds + 1);
+      } else {
+        setGoals(goals + 1);
+        setRounds(0);
+      }
+      setTime(1500); // reset to 25 minutes
+    }
+  }, [isPlaying, time, rounds, goals, setTime, setRounds, setGoals]);
+
   };
 
   return (
