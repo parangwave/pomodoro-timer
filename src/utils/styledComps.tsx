@@ -31,7 +31,7 @@ export const TimerDisplay = styled(motion.span)`
   justify-content: center;
   width: 1.5em;
   height: 2em;
-  background-color: #ffffff;
+  background-color: #fffcf4;
   color: #ff4757;
   border-radius: 1.5rem;
 `;
@@ -46,7 +46,7 @@ export const Button = styled.button`
   margin: 10rem 0;
 
   svg {
-    fill: #ffffff;
+    fill: #fffcf4;
     width: 60%;
     height: 60%;
   }
