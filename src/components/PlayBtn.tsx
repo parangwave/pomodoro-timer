@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useRecoilState } from "recoil";
 import { isPlayingState } from "../utils/atoms";
+import { Button } from "../utils/styledComps";
 
 export function PauseIcon() {
   return (
@@ -38,5 +39,6 @@ export default function PlayBtn() {
     <button onClick={() => setIsPlaying(!isPlaying)}>
       {isPlaying ? <PauseIcon /> : <PlayIcon />}
     </button>
+      <Button>{isPlaying ? <PauseIcon /> : <PlayIcon />}</Button>
   );
 }

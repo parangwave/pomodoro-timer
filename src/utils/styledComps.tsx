@@ -6,6 +6,21 @@ export const TimerContainer = styled.div`
   align-items: center;
   justify-content: center;
   font-family: "Arial, sans-serif";
+
+export const Button = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  margin: 10rem 0;
+
+  svg {
+    fill: #ffffff;
+    width: 60%;
+    height: 60%;
+  }
 `;
 
 export const StatusContainer = styled.div`
