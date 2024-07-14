@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useRecoilState } from "recoil";
 import { isPlayingState } from "../utils/atoms";
-import { Button } from "../utils/styledComps";
+import { Button } from "../styles/StyledComps";
 
 export function PauseIcon() {
   return (

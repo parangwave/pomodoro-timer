@@ -18,7 +18,7 @@ import {
   StatusHeader,
   StatusContent,
   TimerDisplay,
-} from "../utils/styledComps";
+} from "../styles/StyledComps";
 
 // components
 // play button
