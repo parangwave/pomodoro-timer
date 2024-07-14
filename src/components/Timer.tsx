@@ -44,12 +44,17 @@ export default function Timer() {
     }
   }, [isPlaying, time, rounds, goals, setTime, setRounds, setGoals]);
 
-  const formatTime = (time: number) => {
+  const formatMinutes = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
-    return `${minutes.toString().padStart(2, "0")}:${seconds
-      .toString()
-      .padStart(2, "0")}`;
+    return `${minutes.toString().padStart(2, "0")}`;
+  };
+
+  const formatSeconds = (time: number) => {
+    const seconds = time % 60;
+    return `${seconds.toString().padStart(2, "0")}`;
+  };
+
   };
 
   return (
