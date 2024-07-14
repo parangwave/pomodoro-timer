@@ -32,13 +32,20 @@ export function PlayIcon() {
   );
 }
 
+const btnVariants = {
+  tap: { scale: 0.9 },
+};
+
 export default function PlayBtn() {
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
 
   return (
-    <button onClick={() => setIsPlaying(!isPlaying)}>
-      {isPlaying ? <PauseIcon /> : <PlayIcon />}
-    </button>
+    <motion.div
+      variants={btnVariants}
+      whileTap={{ scale: 0.9 }}
+      onClick={() => setIsPlaying(!isPlaying)}
+    >
       <Button>{isPlaying ? <PauseIcon /> : <PlayIcon />}</Button>
+    </motion.div>
   );
 }
