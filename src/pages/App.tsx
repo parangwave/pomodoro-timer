@@ -9,12 +9,6 @@ import {
 } from "../utils/atoms";
 
 export default function App() {
-  const handlePlayBtn = () => {
-    if (!isPlaying) {
-      setIsPlaying(true);
-      setStartTime(Date.now() - elapsedTime);
-    } else {
-      setIsPlaying(false);
   const [time, setTime] = useRecoilState(timerState);
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
   const [rounds, setRounds] = useRecoilState(roundsState);
