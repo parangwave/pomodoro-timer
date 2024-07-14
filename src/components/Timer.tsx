@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
+// atoms
 import {
   timerState,
   isPlayingState,
@@ -7,6 +8,8 @@ import {
   goalsState,
   MAX_MINUTES,
 } from "../utils/atoms";
+
+// styled components
 import {
   TimerContainer,
   TimerDisplayContainer,
@@ -16,8 +19,12 @@ import {
   StatusContent,
   TimerDisplay,
 } from "../utils/styledComps";
+
+// components
+// play button
 import PlayBtn from "./PlayBtn";
 
+// constants
 const MAX_ROUNDS = 4;
 const MAX_GOALS = 12;
 
@@ -75,6 +82,8 @@ export default function Timer() {
   return (
     <TimerContainer>
       <h1>Pomodoro</h1>
+
+      {/* timer clock */}
       <TimerDisplayContainer>
         <TimerDisplay
           key={formatMinutes(time)}
@@ -98,14 +107,21 @@ export default function Timer() {
           {formatSeconds(time)}
         </TimerDisplay>
       </TimerDisplayContainer>
+
+      {/* play button */}
       <PlayBtn />
+
+      {/* rounds & goals */}
       <StatusContainer>
+        {/* rounds */}
         <StatusBox>
           <StatusContent>
             {rounds}/{MAX_ROUNDS}
           </StatusContent>
           <StatusHeader>ROUND</StatusHeader>
         </StatusBox>
+
+        {/* goals */}
         <StatusBox>
           <StatusContent>
             {goals}/{MAX_GOALS}
