@@ -1,6 +1,5 @@
 import { atom } from "recoil";
-
-export const MAX_MINUTES = 1500;
+import { MAX_MINUTES } from "./constants";
 
 export const timerState = atom({
   key: "timerState",

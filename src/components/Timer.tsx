@@ -6,7 +6,6 @@ import {
   isPlayingState,
   roundsState,
   goalsState,
-  MAX_MINUTES,
 } from "../utils/atoms";
 
 // styled components
@@ -25,8 +24,7 @@ import {
 import PlayBtn from "./PlayBtn";
 
 // constants
-const MAX_ROUNDS = 4;
-const MAX_GOALS = 12;
+import { MAX_GOALS, MAX_MINUTES, MAX_ROUNDS } from "../utils/constants";
 
 export default function Timer() {
   const [time, setTime] = useRecoilState(timerState);
