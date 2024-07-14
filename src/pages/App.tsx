@@ -5,6 +5,7 @@ import {
   isPlayingState,
   roundsState,
   goalsState,
+  MAX_MINUTES,
 } from "../utils/atoms";
 
 export default function App() {
@@ -35,7 +36,7 @@ export default function App() {
         setGoals(goals + 1);
         setRounds(0);
       }
-      setTime(1500); // reset to 25 minutes
+      setTime(MAX_MINUTES); // reset to 25 minutes
     }
   }, [isPlaying, time, rounds, goals, setTime, setRounds, setGoals]);
 

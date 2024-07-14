@@ -1,8 +1,10 @@
 import { atom } from "recoil";
 
+export const MAX_MINUTES = 1500;
+
 export const timerState = atom({
   key: "timerState",
-  default: 1500, // 25 min in sec
+  default: MAX_MINUTES, // 25 min in sec
 });
 
 export const isPlayingState = atom({
